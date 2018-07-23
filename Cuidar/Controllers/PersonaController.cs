@@ -16,6 +16,7 @@ namespace Cuidar.Controllers
         public string Registrar(Persona persona)
         {
             Console.Write("Llego");
+            return "";
         }
     }
 }
