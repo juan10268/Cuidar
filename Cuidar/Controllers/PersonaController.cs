@@ -1,6 +1,8 @@
-﻿using Cuidar.Models;
+﻿using Cuidar.Base_Datos;
+using Cuidar.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,13 +12,14 @@ namespace Cuidar.Controllers
 {
     public class PersonaController : ApiController
     {
+        PersonaDB personaDB = new PersonaDB();
+
         [Route("/api/Persona/Agregar")]
         [HttpPost]
         [AllowAnonymous]
-        public string Registrar(Persona persona)
+        public void Registrar(Persona persona)
         {
-            Console.Write("Llego");
-            return "";
+            personaDB.AgregarPersona(persona);            
         }
     }
 }
