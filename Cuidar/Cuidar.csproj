@@ -197,7 +197,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cita.cs" />
+    <Compile Include="Models\Ciudad.cs" />
+    <Compile Include="Models\Documento.cs" />
+    <Compile Include="Models\Escolaridad.cs" />
+    <Compile Include="Models\Especialidad.cs" />
+    <Compile Include="Models\Especialista.cs" />
+    <Compile Include="Models\HistoriaClinicaConsultaGeneral.cs" />
+    <Compile Include="Models\HistoriaClinicaPsicologica.cs" />
+    <Compile Include="Models\HistoriaPrincipalcs.cs" />
+    <Compile Include="Models\HojaDeNutricionMayorDe18.cs" />
+    <Compile Include="Models\HojaDeNutricionMenorDe18.cs" />
+    <Compile Include="Models\Observaciones.cs" />
+    <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Vinculacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
