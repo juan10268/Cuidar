@@ -10,6 +10,7 @@ namespace Cuidar.Base_Datos
     public class PersonaDB
     {
         ContextDB contextDB = new ContextDB();
+
         public void AgregarPersona(Persona persona)
         {
             using (SqlConnection con = contextDB.DbConnection())
