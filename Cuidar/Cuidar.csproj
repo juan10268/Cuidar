@@ -192,9 +192,11 @@
     <Compile Include="Base_Datos\CiudadDB.cs" />
     <Compile Include="Base_Datos\ContextDB.cs" />
     <Compile Include="Base_Datos\PersonaDB.cs" />
+    <Compile Include="Base_Datos\TipoDocumentoDB.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\TipoDocumentoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
