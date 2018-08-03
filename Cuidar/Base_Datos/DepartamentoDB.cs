@@ -1,6 +1,5 @@
 ﻿using Cuidar.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,29 +8,27 @@ using System.Web;
 
 namespace Cuidar.Base_Datos
 {
-    public class CiudadDB
+    public class DepartamentoDB
     {
         ContextDB contextDB = new ContextDB();
-
-        public IEnumerable<Ciudad> getCiudades()
+        public ICollection<Departamento> getDepartamento()
         {
-            List<Ciudad> listaCiudades = new List<Ciudad>();
+            List<Departamento> listaDepartamentos = new List<Departamento>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spGetCiudades", con);
+                SqlCommand cmd = new SqlCommand("spGetAllDepartamentos", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Ciudad ciudad = new Ciudad();
-                    ciudad.ciudadId = Convert.ToInt16(rdr["ciudad_id"]);
-                    ciudad.ciudadNombre = rdr["ciud_nomb"].ToString();
-                    listaCiudades.Add(ciudad);
+                    Departamento departamento = new Departamento();
+                    departamento.DepartamentoID = Convert.ToInt16("");
+                    departamento.DepartamentoNombre = rdr[""].ToString();
+                    listaDepartamentos.Add(departamento);
                 }
-                con.Close();
+                return listaDepartamentos;
             }
-            return listaCiudades;
         }
     }
 }

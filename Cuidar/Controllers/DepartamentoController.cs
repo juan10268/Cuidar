@@ -9,16 +9,16 @@ using System.Web.Http;
 
 namespace Cuidar.Controllers
 {
-    public class CiudadController : ApiController
+    public class DepartamentoController : ApiController
     {
-        CiudadDB ciudadDB = new CiudadDB();
+        DepartamentoDB departamentoDB = new DepartamentoDB();
 
-        [Route("api/Ciudades/getCiudades")]
+        [Route("api/Departamento/getDepartamento")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Ciudad> getDocumentos()
+        public ICollection<Departamento> getDepartamento()
         {
-            return ciudadDB.getCiudades();
+            return departamentoDB.getDepartamento();
         }
     }
 }

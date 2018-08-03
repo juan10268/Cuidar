@@ -13,5 +13,6 @@
         public string personaGenero { get; set; }
         public int personaCiudad { get; set; }
         public int personaTipoDocumento { get; set; }
+        public int personaTipoVinculacion { get; set; }
     }
 }

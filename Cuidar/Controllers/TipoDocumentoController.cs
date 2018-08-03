@@ -8,7 +8,6 @@ namespace Cuidar.Controllers
     public class TipoDocumentoController : ApiController
     {
         TipoDocumentoDB tipoDocumentoDB = new TipoDocumentoDB();
-
         [Route("api/Documento/getDocumentos")]
         [HttpGet]
         [AllowAnonymous]

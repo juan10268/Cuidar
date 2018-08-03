@@ -191,9 +191,13 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Base_Datos\CiudadDB.cs" />
     <Compile Include="Base_Datos\ContextDB.cs" />
+    <Compile Include="Base_Datos\DepartamentoDB.cs" />
+    <Compile Include="Base_Datos\GeneroDB.cs" />
     <Compile Include="Base_Datos\PersonaDB.cs" />
     <Compile Include="Base_Datos\TipoDocumentoDB.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
+    <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\TipoDocumentoController.cs" />
@@ -203,10 +207,12 @@
     </Compile>
     <Compile Include="Models\Cita.cs" />
     <Compile Include="Models\Ciudad.cs" />
+    <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Documento.cs" />
     <Compile Include="Models\Escolaridad.cs" />
     <Compile Include="Models\Especialidad.cs" />
     <Compile Include="Models\Especialista.cs" />
+    <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\HistoriaClinicaConsultaGeneral.cs" />
     <Compile Include="Models\HistoriaClinicaPsicologica.cs" />
     <Compile Include="Models\HistoriaPrincipalcs.cs" />
