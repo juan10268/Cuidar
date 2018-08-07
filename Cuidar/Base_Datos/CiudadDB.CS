@@ -1,6 +1,5 @@
 ﻿using Cuidar.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,7 +11,6 @@ namespace Cuidar.Base_Datos
     public class CiudadDB
     {
         ContextDB contextDB = new ContextDB();
-
         public IEnumerable<Ciudad> getCiudades()
         {
             List<Ciudad> listaCiudades = new List<Ciudad>();

@@ -16,7 +16,7 @@ namespace Cuidar.Controllers
         [Route("api/Ciudades/getCiudades")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Ciudad> getDocumentos()
+        public IEnumerable<Ciudad> getCiudades()
         {
             return ciudadDB.getCiudades();
         }
