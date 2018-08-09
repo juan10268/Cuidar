@@ -1,4 +1,5 @@
-﻿using Cuidar.Models;
+﻿using Cuidar.Base_Datos;
+using Cuidar.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace Cuidar.Controllers
     public class GeneroController : ApiController
     {
         GeneroDB generoDB = new GeneroDB();
-
         public ICollection<Genero> getGenero()
         {
             return generoDB.getGenero(); 

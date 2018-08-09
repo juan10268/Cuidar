@@ -8,29 +8,29 @@ using System.Web;
 
 namespace Cuidar.Base_Datos
 {
-    public class GeneroDB
+    public class EstadoCitaDB
     {
         ContextDB contextDB = new ContextDB();
 
-        public ICollection<Genero> getGenero()
+        public IEnumerable<EstadoCita> getEstadoCita()
         {
-            List<Genero> listaGeneros = new List<Genero>();
+            List<EstadoCita> listaEstadoCita = new List<EstadoCita>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spGetGenero", con);
+                SqlCommand cmd = new SqlCommand("spGetEstadoCita", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Genero genero = new Genero();
-                    genero.generoId = Convert.ToInt16(rdr["estadocita_id"]);
-                    genero.generoNombre = rdr["estadocita_nombre"].ToString();
-                    listaGeneros.Add(genero);
+                    EstadoCita estadoCita = new EstadoCita();
+                    estadoCita.EstadoCitaID = Convert.ToInt16(rdr["estadocita_id"]);
+                    estadoCita.EstadoCitaNombre = rdr["estadocita_nombre"].ToString();
+                    listaEstadoCita.Add(estadoCita);
                 }
                 con.Close();
             }
-            return listaGeneros;
+            return listaEstadoCita;
         }
     }
 }
