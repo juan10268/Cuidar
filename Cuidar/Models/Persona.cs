@@ -9,10 +9,10 @@
         public string personaFechaNacimiento { get; set; }
         public string personaTelefono { get; set; }
         public string personaDireccion { get; set; }
-        public string personaEstadoCivil { get; set; }
-        public string personaGenero { get; set; }
+        public int personaEstadoCivil { get; set; }
+        public int personaGenero { get; set; }
         public int personaCiudad { get; set; }
         public int personaTipoDocumento { get; set; }
-        public int personaTipoVinculacion { get; set; }
+        public int personaEscolaridad { get; set; }
     }
 }

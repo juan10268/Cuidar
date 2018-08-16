@@ -194,6 +194,7 @@
     <Compile Include="Base_Datos\ContextDB.cs" />
     <Compile Include="Base_Datos\DepartamentoDB.cs" />
     <Compile Include="Base_Datos\EstadoCitaDB.cs" />
+    <Compile Include="Base_Datos\PacienteDB.cs" />
     <Compile Include="Base_Datos\TipoAntecedentesDB.cs" />
     <Compile Include="Controllers\CitaController.cs" />
     <Compile Include="Controllers\EstadoCitaController.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HistoriaGeneralController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\TipoAntecedentesController.cs" />
     <Compile Include="Controllers\TipoDocumentoController.cs" />
