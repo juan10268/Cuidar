@@ -27,7 +27,7 @@ namespace Cuidar.Controllers
         [AllowAnonymous]
         public IEnumerable<Persona> getIdentificacionPersona(int id)
         {
-            return personaDB.GetInformacionPersonaID(id);
+            return personaDB.GetPersonasPorID(id);
         }
     }
 }

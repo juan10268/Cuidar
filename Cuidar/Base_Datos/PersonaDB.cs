@@ -35,14 +35,13 @@ namespace Cuidar.Base_Datos
             }
         }
 
-        public IEnumerable<Persona> GetInformacionPersonaID(int id)
+        private IEnumerable<Persona> GetPersonas()
         {
             List<Persona> listaPersonaporId = new List<Persona>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("GetIdentificacionPorId", con);
+                SqlCommand cmd = new SqlCommand("GetPersonas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@per_id", id);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -64,8 +63,21 @@ namespace Cuidar.Base_Datos
                 }
             }
             return listaPersonaporId;
-        }        
-    }
+        } 
+        
+        public IEnumerable<Persona> GetPersonasPorID(int ID)
+        {
+            IEnumerable<Persona> getCitaResultado = GetPersonas();
+            if (getCitaResultado.Any(c => c.personaID == ID))
+            {
+                return getCitaResultado;
+            }
+            else
+            {
+                return getCitaResultado = Enumerable.Empty<Persona>();
+            }
+        }
+    } 
 }
                     
                
