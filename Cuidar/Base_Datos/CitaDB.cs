@@ -15,32 +15,23 @@ namespace Cuidar.Base_Datos
         {
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spAgregarCita", con);
+                SqlCommand cmd = new SqlCommand("AgregarCita", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@paciente_id", cita.pacienteID);
                 cmd.Parameters.AddWithValue("@especialista_id", cita.especialistaID);
-                cmd.Parameters.AddWithValue("@cita_id", cita.citaID);
+                cmd.Parameters.AddWithValue("@cita_id", cita.citaID = GetIDCita());
                 cmd.Parameters.AddWithValue("@cita_fecha", cita.citaFecha);
                 cmd.Parameters.AddWithValue("@cita_hora", cita.citaHora);
-                cmd.Parameters.AddWithValue("@estadocita_id", cita.estadoCitaID);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
-
         public int GetIDCita()
         {
-            SqlConnection con = contextDB.DbConnection();
-            SqlCommand cmd = new SqlCommand("GetIDCita", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            rdr.Read();
-            int IDCita = Convert.ToInt32(rdr["cita_id"]);
-            return IDCita;
+            var idCita = (getCitas().Max(x => x.citaID) + 1);
+            return idCita;
         }
-
         private IEnumerable<Cita> getCitas()
         {
             List<Cita> listaCitas = new List<Cita>();

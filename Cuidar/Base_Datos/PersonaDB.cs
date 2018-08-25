@@ -11,6 +11,7 @@ namespace Cuidar.Base_Datos
     public class PersonaDB
     {
         ContextDB contextDB = new ContextDB();
+        PacienteDB pacienteDB = new PacienteDB();
 
         public void AgregarPersona(Persona persona)
         {
@@ -34,8 +35,7 @@ namespace Cuidar.Base_Datos
                 con.Close();
             }
         }
-
-        private IEnumerable<Persona> GetPersonas()
+        public IEnumerable<Persona> GetPersonas()
         {
             List<Persona> listaPersonaporId = new List<Persona>();
             using (SqlConnection con = contextDB.DbConnection())
@@ -63,20 +63,34 @@ namespace Cuidar.Base_Datos
                 }
             }
             return listaPersonaporId;
-        } 
-        
-        public IEnumerable<Persona> GetPersonasPorID(int ID)
+        }
+        public IEnumerable<Persona> GetPersonaPorID(int id)
         {
-            IEnumerable<Persona> getCitaResultado = GetPersonas();
-            if (getCitaResultado.Any(c => c.personaID == ID))
+            IEnumerable<Persona> getResultadoPersona = GetPersonas().Where(c => c.personaID == id);
+            if (getResultadoPersona.Any())
             {
-                return getCitaResultado;
+                return getResultadoPersona;
             }
             else
             {
-                return getCitaResultado = Enumerable.Empty<Persona>();
+                getResultadoPersona = Enumerable.Empty<Persona>();
             }
+            return getResultadoPersona;
         }
+        public IEnumerable<Persona> GetPersonasPaciente(int ID)
+        {
+            IEnumerable<Paciente> getResultadoPaciente = pacienteDB.GetPacientePorId(ID);
+            IEnumerable<Persona> getResultadoPersona = GetPersonas().Where(c => c.personaID == ID);
+            if ((getResultadoPaciente.Any()) && getResultadoPersona.Any())
+            {
+                return getResultadoPersona;
+
+            }
+            else
+            {
+                return getResultadoPersona = Enumerable.Empty<Persona>();
+            }
+        }        
     } 
 }
                     

@@ -22,12 +22,19 @@ namespace Cuidar.Controllers
         {
             personaDB.AgregarPersona(persona);
         }
-        [Route("api/Persona/getInformacion")]
+        [Route("api/Persona/GetPersonaPorId")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Persona> getIdentificacionPersona(int id)
+        public IEnumerable<Persona> GetPersonaPorID(int id)
         {
-            return personaDB.GetPersonasPorID(id);
+            return personaDB.GetPersonaPorID(id);
         }
+        [Route("api/Persona/PersonaPaciente")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IEnumerable<Persona> GetPersonaPaciente(int id)
+        {
+            return personaDB.GetPersonasPaciente(id);
+        } 
     }
 }
