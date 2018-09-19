@@ -35,12 +35,12 @@ namespace Cuidar.Base_Datos
                 con.Close();
             }
         }
-        public IEnumerable<Persona> GetPersonas()
+        public IEnumerable<Persona> getPersonas()
         {
             List<Persona> listaPersonaporId = new List<Persona>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("GetPersonas", con);
+                SqlCommand cmd = new SqlCommand("getPersonas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -66,7 +66,7 @@ namespace Cuidar.Base_Datos
         }
         public IEnumerable<Persona> GetPersonaPorID(int id)
         {
-            IEnumerable<Persona> getResultadoPersona = GetPersonas().Where(c => c.personaID == id);
+            IEnumerable<Persona> getResultadoPersona = getPersonas().Where(c => c.personaID == id);
             if (getResultadoPersona.Any())
             {
                 return getResultadoPersona;
@@ -77,14 +77,13 @@ namespace Cuidar.Base_Datos
             }
             return getResultadoPersona;
         }
-        public IEnumerable<Persona> GetPersonasPaciente(int ID)
+        public IEnumerable<Persona> getPersonasPaciente(int ID)
         {
-            IEnumerable<Paciente> getResultadoPaciente = pacienteDB.GetPacientePorId(ID);
-            IEnumerable<Persona> getResultadoPersona = GetPersonas().Where(c => c.personaID == ID);
+            IEnumerable<Paciente> getResultadoPaciente = pacienteDB.getInfoPaciente(ID);
+            IEnumerable<Persona> getResultadoPersona = getPersonas().Where(c => c.personaID == ID);
             if ((getResultadoPaciente.Any()) && getResultadoPersona.Any())
             {
                 return getResultadoPersona;
-
             }
             else
             {

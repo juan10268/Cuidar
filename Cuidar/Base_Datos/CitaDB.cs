@@ -15,7 +15,7 @@ namespace Cuidar.Base_Datos
         {
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("AgregarCita", con);
+                SqlCommand cmd = new SqlCommand("agregarCita", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@paciente_id", cita.pacienteID);
                 cmd.Parameters.AddWithValue("@especialista_id", cita.especialistaID);
@@ -47,14 +47,14 @@ namespace Cuidar.Base_Datos
                     cita.pacienteID = Convert.ToInt16(rdr["paciente_id"]);
                     cita.citaID = Convert.ToInt16(rdr["cita_id"]);
                     cita.especialistaID = Convert.ToInt16(rdr["especialista_id"]);
-                    cita.citaFecha = rdr["cita_fecha"].ToString();
-                    cita.citaHora = rdr["cita_hora"].ToString();
+                    cita.citaFecha = rdr["cita_fecha"].ToString().Substring(0,10);
+                    cita.citaHora = rdr.GetTimeSpan(rdr.GetOrdinal("cita_hora"));
                     cita.estadoCitaID = Convert.ToInt16(rdr["estadocita_id"]);
                     listaCitas.Add(cita);
                 }
             }
             return listaCitas;
-        }        
+        }
         public IEnumerable<Cita> getCitasPorPersona(int ID)
         {
             IEnumerable<Cita> getCitaResultado = getCitas();
@@ -71,6 +71,11 @@ namespace Cuidar.Base_Datos
         {
             IEnumerable<Cita> getCitaResultado = getCitas().Where(c => c.citaID == idCita);
             return getCitaResultado;
+        }
+        public IEnumerable<Cita> getCitasPorEspecialista(int idEspecialista)
+        {
+            IEnumerable<Cita> getCitaEspecialista = getCitas().Where(x => x.especialistaID == idEspecialista);
+            return getCitaEspecialista;
         }
     }
 }

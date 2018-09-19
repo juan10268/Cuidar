@@ -11,7 +11,7 @@ namespace Cuidar.Models
         public int especialistaID { get; set; }
         public int citaID { get; set; }
         public string citaFecha { get; set; }
-        public string citaHora { get; set; }
+        public TimeSpan citaHora { get; set; }
         public int estadoCitaID { get; set; }
     }
 }

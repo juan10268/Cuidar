@@ -11,12 +11,12 @@ namespace Cuidar.Base_Datos
     public class DepartamentoDB
     {
         ContextDB contextDB = new ContextDB();
-        public ICollection<Departamento> getDepartamento()
+        public IEnumerable<Departamento> getDepartamento()
         {
             List<Departamento> listaDepartamentos = new List<Departamento>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spGetAllDepartamentos", con);
+                SqlCommand cmd = new SqlCommand("getAllDepartamentos", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

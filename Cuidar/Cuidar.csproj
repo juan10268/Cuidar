@@ -196,6 +196,7 @@
     <Compile Include="Base_Datos\EspecialidadDB.cs" />
     <Compile Include="Base_Datos\EspecialistaDB.cs" />
     <Compile Include="Base_Datos\EstadoCitaDB.cs" />
+    <Compile Include="Base_Datos\HorarioDB.cs" />
     <Compile Include="Base_Datos\PacienteDB.cs" />
     <Compile Include="Base_Datos\TipoAntecedentesDB.cs" />
     <Compile Include="Controllers\CitaController.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HistoriaGeneralController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\TipoAntecedentesController.cs" />
@@ -234,6 +236,7 @@
     <Compile Include="Models\HistoriaGeneral.cs" />
     <Compile Include="Models\HojaDeNutricionMayorDe18.cs" />
     <Compile Include="Models\HojaDeNutricionMenorDe18.cs" />
+    <Compile Include="Models\Horario.cs" />
     <Compile Include="Models\Observaciones.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\Persona.cs" />

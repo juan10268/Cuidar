@@ -16,7 +16,7 @@ namespace Cuidar.Controllers
         [Route("api/Departamento/getDepartamento")]
         [HttpGet]
         [AllowAnonymous]
-        public ICollection<Departamento> getDepartamento()
+        public IEnumerable<Departamento> getDepartamento()
         {
             return departamentoDB.getDepartamento();
         }

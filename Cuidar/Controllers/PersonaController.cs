@@ -2,7 +2,6 @@
 using Cuidar.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,28 +12,13 @@ namespace Cuidar.Controllers
     public class PersonaController : ApiController
     {
         PersonaDB personaDB = new PersonaDB();
-        Persona persona = new Persona();
 
-        [Route("api/Persona/Agregar")]
-        [HttpPost]
-        [AllowAnonymous]
-        public void RegistrarPersona(Persona persona)
-        {
-            personaDB.AgregarPersona(persona);
-        }
-        [Route("api/Persona/GetPersonaPorId")]
+        [Route("api/Persona/getPacienteInfo")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Persona> GetPersonaPorID(int id)
+        public IEnumerable<Persona> getInfoPaciente(int idPaciente)
         {
-            return personaDB.GetPersonaPorID(id);
+            return personaDB.getPersonasPaciente(idPaciente);               
         }
-        [Route("api/Persona/PersonaPaciente")]
-        [HttpGet]
-        [AllowAnonymous]
-        public IEnumerable<Persona> GetPersonaPaciente(int id)
-        {
-            return personaDB.GetPersonasPaciente(id);
-        } 
     }
 }
