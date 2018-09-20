@@ -67,7 +67,7 @@ namespace Cuidar.Base_Datos
             List<Persona> listaPersonas = new List<Persona>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spGetAllPersonas", con);
+                SqlCommand cmd = new SqlCommand("getPersonas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
