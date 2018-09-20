@@ -12,5 +12,6 @@ namespace Cuidar.Models
         public int vinculacionTipoId { get; set; }
         public string pacienteFechaIngreso { get; set; }
         public string pacienteFechaRetiro { get; set; }
+        public int activacionID { get; set; }
     }
 }

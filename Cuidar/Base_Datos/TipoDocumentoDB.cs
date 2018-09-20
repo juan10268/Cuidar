@@ -21,8 +21,8 @@ namespace Cuidar.Base_Datos
                 while (rdr.Read())
                 {
                     Documento documento = new Documento();
-                    documento.documentoTipoId = Convert.ToInt16(rdr["doc_tip_id"]);
-                    documento.documentoTipoNombre = rdr["doc_tip_nom"].ToString();
+                    documento.documentoTipoId = Convert.ToInt16(rdr["tipodoc_id"]);
+                    documento.documentoTipoNombre = rdr["tipodoc_nombre"].ToString();
                     listaDocumentos.Add(documento);
                 }
                 con.Close();
@@ -31,5 +31,4 @@ namespace Cuidar.Base_Datos
         }
     }
 }
-
-   
+          

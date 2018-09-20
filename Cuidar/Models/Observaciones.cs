@@ -7,10 +7,10 @@ namespace Cuidar.Models
 {
     public class Observaciones
     {
-        public string detalleDelPaciente { get; set; }
-        public int vinculacionTipoId { get; set; }
-        public int personaId { get; set; }
-        public int documentoTipoId { get; set; }
-        public int ciudadId { get; set; }
+        public string detallePaciente { get; set; }
+        public int vinculacionTipoID { get; set; }
+        public int personaID { get; set; }
+        public int documentoTipoID { get; set; }
+        public int ciudadID { get; set; }
     }
 }

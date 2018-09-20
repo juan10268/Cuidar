@@ -13,6 +13,30 @@ namespace Cuidar.Controllers
     {
         PersonaDB personaDB = new PersonaDB();
 
+        [Route("api/Persona/Agregar")]
+        [HttpPost]
+        [AllowAnonymous]
+        public void RegistrarPersona(Persona persona)
+        {
+            personaDB.AgregarPersona(persona);
+        }
+
+        [Route("api/Persona/getPersonas")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IEnumerable<Persona> getPersonas()
+        {
+            return personaDB.getPersonas();
+        }
+
+        [Route("api/Persona/Editar")]
+        [HttpPost]
+        [AllowAnonymous]
+        public void EditarPersona(Persona persona)
+        {
+            personaDB.EditarPersona(persona);
+        }
+
         [Route("api/Persona/getPacienteInfo")]
         [HttpGet]
         [AllowAnonymous]

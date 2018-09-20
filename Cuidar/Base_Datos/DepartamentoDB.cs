@@ -23,8 +23,8 @@ namespace Cuidar.Base_Datos
                 while (rdr.Read())
                 {
                     Departamento departamento = new Departamento();
-                    departamento.DepartamentoID = Convert.ToInt16("");
-                    departamento.DepartamentoNombre = rdr[""].ToString();
+                    departamento.DepartamentoID = Convert.ToInt16("departamento_id");
+                    departamento.DepartamentoNombre = rdr["departamento_nombre"].ToString();
                     listaDepartamentos.Add(departamento);
                 }
                 return listaDepartamentos;

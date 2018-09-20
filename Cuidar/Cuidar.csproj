@@ -193,13 +193,19 @@
     <Compile Include="Base_Datos\CiudadDB.cs" />
     <Compile Include="Base_Datos\ContextDB.cs" />
     <Compile Include="Base_Datos\DepartamentoDB.cs" />
+    <Compile Include="Base_Datos\EscolaridadDB.cs" />
     <Compile Include="Base_Datos\EspecialidadDB.cs" />
     <Compile Include="Base_Datos\EspecialistaDB.cs" />
     <Compile Include="Base_Datos\EstadoCitaDB.cs" />
+    <Compile Include="Base_Datos\EstadoActivacionDB.cs" />
+    <Compile Include="Base_Datos\EstadoCivilDB.cs" />
     <Compile Include="Base_Datos\HorarioDB.cs" />
     <Compile Include="Base_Datos\PacienteDB.cs" />
+    <Compile Include="Base_Datos\RangoSalarialDB.cs" />
     <Compile Include="Base_Datos\TipoAntecedentesDB.cs" />
+    <Compile Include="Base_Datos\VinculacionDB.cs" />
     <Compile Include="Controllers\CitaController.cs" />
+    <Compile Include="Controllers\EscolaridadController.cs" />
     <Compile Include="Controllers\EspecialidadController.cs" />
     <Compile Include="Controllers\EspecialistaController.cs" />
     <Compile Include="Controllers\EstadoCitaController.cs" />
@@ -209,15 +215,19 @@
     <Compile Include="Controllers\AntecedentesController.cs" />
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Controllers\EstadoActivacionController.cs" />
+    <Compile Include="Controllers\EstadoCivilController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HistoriaGeneralController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\RangoSalarialController.cs" />
     <Compile Include="Controllers\TipoAntecedentesController.cs" />
     <Compile Include="Controllers\TipoDocumentoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VinculacionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,6 +240,8 @@
     <Compile Include="Models\Especialidad.cs" />
     <Compile Include="Models\Especialista.cs" />
     <Compile Include="Models\EstadoCita.cs" />
+    <Compile Include="Models\EstadoActivacion.cs" />
+    <Compile Include="Models\EstadoCivil.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\HistoriaClinicaConsultaGeneral.cs" />
     <Compile Include="Models\HistoriaClinicaPsicologica.cs" />
@@ -240,6 +252,7 @@
     <Compile Include="Models\Observaciones.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\RangoSalarial.cs" />
     <Compile Include="Models\TipoAntecedentes.cs" />
     <Compile Include="Models\Vinculacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

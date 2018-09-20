@@ -14,5 +14,6 @@
         public int personaCiudad { get; set; }
         public int personaTipoDocumento { get; set; }
         public int personaEscolaridad { get; set; }
+        public int personaDepartamento { get; set; }
     }
 }
