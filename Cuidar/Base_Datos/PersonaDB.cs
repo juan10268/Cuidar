@@ -12,6 +12,8 @@ namespace Cuidar.Base_Datos
     {
         ContextDB contextDB = new ContextDB();
         PacienteDB pacienteDB = new PacienteDB();
+        VinculacionDB vinculacionDB = new VinculacionDB();
+        RangoSalarialDB rangoSalarialDB = new RangoSalarialDB();
 
         public void AgregarPersona(Persona persona)
         {
@@ -56,7 +58,6 @@ namespace Cuidar.Base_Datos
                 cmd.Parameters.AddWithValue("@ciudad_id", persona.personaCiudad);
                 cmd.Parameters.AddWithValue("@escolaridad", persona.personaEscolaridad);
                 cmd.Parameters.AddWithValue("@departamento", persona.personaDepartamento);
-
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -108,17 +109,25 @@ namespace Cuidar.Base_Datos
             }
             return getResultadoPersona;
         }
-        public IEnumerable<Persona> getPersonasPaciente(int ID)
+        public IEnumerable<object> getPersonasPaciente(int ID)
         {
             IEnumerable<Paciente> getResultadoPaciente = pacienteDB.getInfoPaciente(ID);
             IEnumerable<Persona> getResultadoPersona = getPersonas().Where(c => c.personaID == ID);
             if ((getResultadoPaciente.Any()) && getResultadoPersona.Any())
             {
-                return getResultadoPersona;
+                IEnumerable<RangoSalarial> getRangoSalarial = rangoSalarialDB.getRangoSalarial();
+                IEnumerable<Vinculacion> getVinculacion = vinculacionDB.getVinculacion();
+                var pacienteLista = getResultadoPaciente.Join(getRangoSalarial, x => x.rangoSalarialID, y => y.RangoSalario_Id, (x, y) =>
+                    new { x.pacienteID, x.pacienteFechaIngreso, x.pacienteFechaRetiro, x.vinculacionTipoId, y.RangoSalario_Nombre }).
+                    Join(getVinculacion, x => x.vinculacionTipoId, y => y.vinculacionTipoId, (x, y) =>
+                    new { x.pacienteID, x.pacienteFechaIngreso, x.pacienteFechaRetiro, y.vinculacionTipoNombre, x.RangoSalario_Nombre }).
+                    Join(getResultadoPersona, x => x.pacienteID, y => y.personaID, (x, y) => new { x.pacienteID, y.personaNombre,
+                        y.personaApellido1, y.personaApellido2, x.pacienteFechaIngreso, x.pacienteFechaRetiro, x.RangoSalario_Nombre, x.vinculacionTipoNombre });
+                return pacienteLista;
             }
             else
             {
-                return getResultadoPersona = Enumerable.Empty<Persona>();
+                return getResultadoPaciente = Enumerable.Empty<Paciente>();
             }
         }        
     } 

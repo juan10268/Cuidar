@@ -10,6 +10,9 @@ namespace Cuidar.Base_Datos
     public class CitaDB
     {
         ContextDB contextDB = new ContextDB();
+        PersonaDB personaDB = new PersonaDB();
+        EstadoCitaDB estadoCitaDB = new EstadoCitaDB();
+        IncidenciaCitaDB incidenciaCitaDB = new IncidenciaCitaDB();
 
         public void AgregarCita(Cita cita)
         {
@@ -19,19 +22,27 @@ namespace Cuidar.Base_Datos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@paciente_id", cita.pacienteID);
                 cmd.Parameters.AddWithValue("@especialista_id", cita.especialistaID);
-                cmd.Parameters.AddWithValue("@cita_id", cita.citaID = GetIDCita());
+                cmd.Parameters.AddWithValue("@cita_id", cita.citaID = getIDCita());
                 cmd.Parameters.AddWithValue("@cita_fecha", cita.citaFecha);
                 cmd.Parameters.AddWithValue("@cita_hora", cita.citaHora);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            incidenciaCitaDB.crearIncidenciaCita(cita.citaID, 1, "Cita creada el dia " + DateTime.Now.ToShortDateString().ToString());
         }
-        public int GetIDCita()
+        public int getIDCita()
         {
-            var idCita = (getCitas().Max(x => x.citaID) + 1);
-            return idCita;
-        }
+            if (getCitas().Any())
+            {
+                var idCita = (getCitas().Max(x => x.citaID) + 1);
+                return idCita;
+            }
+            else
+            {
+                return 1;
+            }
+        }        
         private IEnumerable<Cita> getCitas()
         {
             List<Cita> listaCitas = new List<Cita>();
@@ -47,20 +58,27 @@ namespace Cuidar.Base_Datos
                     cita.pacienteID = Convert.ToInt16(rdr["paciente_id"]);
                     cita.citaID = Convert.ToInt16(rdr["cita_id"]);
                     cita.especialistaID = Convert.ToInt16(rdr["especialista_id"]);
-                    cita.citaFecha = rdr["cita_fecha"].ToString().Substring(0,10);
+                    cita.citaFecha = Convert.ToDateTime(rdr["cita_fecha"].ToString());
                     cita.citaHora = rdr.GetTimeSpan(rdr.GetOrdinal("cita_hora"));
                     cita.estadoCitaID = Convert.ToInt16(rdr["estadocita_id"]);
                     listaCitas.Add(cita);
                 }
+                con.Close();
             }
             return listaCitas;
         }
-        public IEnumerable<Cita> getCitasPorPersona(int ID)
+        public IEnumerable<object> getCitasPorPersona(int ID)
         {
             IEnumerable<Cita> getCitaResultado = getCitas();
             if (getCitaResultado.Any(c => c.pacienteID == ID))
             {
-                return getCitaResultado;
+                IEnumerable<Persona> getEspecialistaCita = personaDB.getPersonas();
+                IEnumerable<EstadoCita> getEstadoCita = estadoCitaDB.getEstadoCita();
+                var getCita = getCitas().Join(getEspecialistaCita, x => x.especialistaID, y => y.personaID, (x, y) =>
+                new { x.citaID, y.personaNombre, y.personaApellido1, y.personaApellido2, x.citaFecha, x.citaHora, x.estadoCitaID }).OrderBy(x => x.citaHora)
+                .Join(getEstadoCita, x => x.estadoCitaID, y => y.EstadoCitaID, (x, y) => new
+                { x.citaID, x.personaNombre, x.personaApellido1, x.personaApellido2, x.citaFecha, x.citaHora, x.estadoCitaID, y.EstadoCitaNombre }).OrderBy(x => x.citaFecha);
+                return getCita;
             }
             else
             {
@@ -76,6 +94,20 @@ namespace Cuidar.Base_Datos
         {
             IEnumerable<Cita> getCitaEspecialista = getCitas().Where(x => x.especialistaID == idEspecialista);
             return getCitaEspecialista;
+        }
+
+        public void cancelarCita(int idCita, string incidenciaDetalle)
+        {
+            using (SqlConnection con = contextDB.DbConnection())
+            {
+                SqlCommand cmd = new SqlCommand("cancelarCitaUsuario", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cita_id", idCita);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            incidenciaCitaDB.crearIncidenciaCita(idCita, 2, incidenciaDetalle);
         }
     }
 }

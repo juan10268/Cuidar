@@ -20,25 +20,25 @@ namespace Cuidar.Controllers
         [Route("api/Cita/CitaPersona")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Cita> CitaPorPersona(int pacienteID)
+        public IEnumerable<object> CitaPorPersona(int pacienteID)
         {
             return citaDB.getCitasPorPersona(pacienteID);
         }
-
-        [Route("api/Cita/GetIDCita")]
-        [HttpGet]
-        [AllowAnonymous]
-        public int GetIDCita()
-        {
-            return citaDB.GetIDCita();
-        }
-        
+                
         [Route("api/Cita/DetalleCita")]
         [HttpGet]
         [AllowAnonymous]
         public IEnumerable<Cita> DetalleCita(int idCita)
         {
             return citaDB.getCitaPorId(idCita);
+        }
+
+        [Route("api/Cita/Cancelar")]
+        [HttpPost]
+        [AllowAnonymous]
+        public void CancelarCita(int idCita, string incidenciaDetalle)
+        {
+            citaDB.cancelarCita(idCita, incidenciaDetalle);
         }
     }
 }

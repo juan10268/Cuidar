@@ -17,7 +17,7 @@ namespace Cuidar.Base_Datos
             List<EstadoCita> listaEstadoCita = new List<EstadoCita>();
             using (SqlConnection con = contextDB.DbConnection())
             {
-                SqlCommand cmd = new SqlCommand("spGetEstadoCita", con);
+                SqlCommand cmd = new SqlCommand("getEstadoCita", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();

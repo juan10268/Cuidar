@@ -40,7 +40,7 @@ namespace Cuidar.Controllers
         [Route("api/Persona/getPacienteInfo")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Persona> getInfoPaciente(int idPaciente)
+        public IEnumerable<object> getInfoPaciente(int idPaciente)
         {
             return personaDB.getPersonasPaciente(idPaciente);               
         }

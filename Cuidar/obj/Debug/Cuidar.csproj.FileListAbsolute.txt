@@ -110,13 +110,6 @@ C:\Users\JUAN URREA\Documents\Juan Pablo Urrea Correa\Proyecto CUIDAR\Cuidar\Cui
 C:\Users\JUAN URREA\Documents\Juan Pablo Urrea Correa\Proyecto CUIDAR\Cuidar\Cuidar\obj\Debug\Cuidar.csproj.CopyComplete
 C:\Users\JUAN URREA\Documents\Juan Pablo Urrea Correa\Proyecto CUIDAR\Cuidar\Cuidar\obj\Debug\Cuidar.dll
 C:\Users\JUAN URREA\Documents\Juan Pablo Urrea Correa\Proyecto CUIDAR\Cuidar\Cuidar\obj\Debug\Cuidar.pdb
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\VBCSCompiler.exe
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\ApplicationInsights.config
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\Cuidar.dll.config
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\Cuidar.dll
@@ -128,32 +121,29 @@ C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\csi.exe
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\csi.exe.config
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\csi.rsp
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.Win32.Primitives.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.AppContext.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Console.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Diagnostics.StackTrace.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.Compression.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.Pipes.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Claims.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Cryptography.Algorithms.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Cryptography.Primitives.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Principal.Windows.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Threading.Thread.dll
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.ValueTuple.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Xml.ReaderWriter.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Xml.XPath.dll
@@ -161,6 +151,7 @@ C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Xml.XPath.XDo
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\vbc.exe
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\vbc.exe.config
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\vbc.rsp
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\VBCSCompiler.exe
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\Antlr3.Runtime.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\Microsoft.AI.Agent.Intercept.dll
@@ -217,8 +208,15 @@ C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\es\System.Web.Razor.resourc
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\es\System.Web.WebPages.resources.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.csprojAssemblyReference.cache
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.csproj.CoreCompileInputs.cache
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.csproj.CopyComplete
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.dll
 C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.pdb
-C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\obj\Debug\Cuidar.csprojAssemblyReference.cache
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.ValueTuple.dll
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\anama\OneDrive\Documentos\Cuidar\Cuidar\bin\roslyn\System.IO.Pipes.AccessControl.dll
