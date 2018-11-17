@@ -1,4 +1,6 @@
-﻿namespace Cuidar.Models
+﻿using System;
+
+namespace Cuidar.Models
 {
     public class Persona
     {
@@ -6,7 +8,7 @@
         public string personaNombre { get; set; }
         public string personaApellido1 { get; set; }
         public string personaApellido2 { get; set; }
-        public string personaFechaNacimiento { get; set; }
+        public DateTime personaFechaNacimiento { get; set; }
         public string personaTelefono { get; set; }
         public string personaDireccion { get; set; }
         public int personaEstadoCivil { get; set; }

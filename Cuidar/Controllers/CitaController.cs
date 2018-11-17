@@ -1,5 +1,6 @@
 ﻿using Cuidar.Base_Datos;
 using Cuidar.Models;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -39,6 +40,13 @@ namespace Cuidar.Controllers
         public void CancelarCita(int idCita, string incidenciaDetalle)
         {
             citaDB.cancelarCita(idCita, incidenciaDetalle);
+        }
+        [Route("api/Cita/RevisarHorarioCita")]
+        [HttpGet]
+        [AllowAnonymous]
+        public Boolean RevisarHorarioCita(int idCita)
+        {
+            return citaDB.RevisionHorarioCita(idCita);
         }
     }
 }

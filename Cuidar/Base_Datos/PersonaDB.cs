@@ -80,7 +80,7 @@ namespace Cuidar.Base_Datos
                         personaNombre = rdr["per_nombre"].ToString(),
                         personaApellido1 = rdr["per_apellido1"].ToString(),
                         personaApellido2 = rdr["per_apellido2"].ToString(),
-                        personaFechaNacimiento = rdr["per_nacimiento"].ToString(),
+                        personaFechaNacimiento = Convert.ToDateTime(rdr["per_nacimiento"].ToString()),
                         personaDireccion = rdr["per_direccion"].ToString(),
                         personaTelefono = rdr["per_telefono"].ToString(),
                         personaEstadoCivil = Convert.ToInt16(rdr["stv_id"]),
@@ -129,7 +129,20 @@ namespace Cuidar.Base_Datos
             {
                 return getResultadoPaciente = Enumerable.Empty<Paciente>();
             }
-        }        
+        }
+        public string getEdadExactaPaciente(int personaID)
+        {
+            string edadPaciente = null;
+            foreach (Persona persona in GetPersonaPorID(personaID))
+            {
+                DateTime fechaNacimiento = persona.personaFechaNacimiento;
+                var diferenciaAños = DateTime.Today.AddTicks(-fechaNacimiento.Ticks).Year - 1 + " Años, ";
+                var diferenciaMeses = DateTime.Today.AddTicks(-fechaNacimiento.Ticks).Month - 1 + " Meses ";
+                var diferenciaDias = DateTime.Today.AddTicks(-fechaNacimiento.Ticks).Day + " Dias";
+                edadPaciente = diferenciaAños + diferenciaMeses + diferenciaDias;
+            }
+            return edadPaciente;
+        }
     } 
 }
                     

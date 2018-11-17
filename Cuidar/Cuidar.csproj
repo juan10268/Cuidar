@@ -198,6 +198,7 @@
     <Compile Include="Base_Datos\EstadoCitaDB.cs" />
     <Compile Include="Base_Datos\EstadoActivacionDB.cs" />
     <Compile Include="Base_Datos\EstadoCivilDB.cs" />
+    <Compile Include="Base_Datos\HistoriaClinicaGeneralDB.cs" />
     <Compile Include="Base_Datos\HorarioDB.cs" />
     <Compile Include="Base_Datos\IncidenciaCitaDB.cs" />
     <Compile Include="Base_Datos\PacienteDB.cs" />
@@ -244,7 +245,7 @@
     <Compile Include="Models\EstadoActivacion.cs" />
     <Compile Include="Models\EstadoCivil.cs" />
     <Compile Include="Models\Genero.cs" />
-    <Compile Include="Models\HistoriaClinicaConsultaGeneral.cs" />
+    <Compile Include="Models\HistoriaClinicaGeneral.cs" />
     <Compile Include="Models\HistoriaClinicaPsicologica.cs" />
     <Compile Include="Models\HistoriaGeneral.cs" />
     <Compile Include="Models\HojaDeNutricionMayorDe18.cs" />

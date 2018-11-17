@@ -109,6 +109,26 @@ namespace Cuidar.Base_Datos
             }
             incidenciaCitaDB.crearIncidenciaCita(idCita, 2, incidenciaDetalle);
         }
+        public Boolean RevisionHorarioCita(int idCita)
+        {
+            Boolean validarHorarioCita = false;
+            IEnumerable<Cita> listaCitaPorID = getCitaPorId(idCita);
+            foreach (Cita cita in listaCitaPorID)
+            {
+                DateTime diaCita = cita.citaFecha;
+                DateTime diaActual = DateTime.Now.Date;
+                if (diaActual == diaCita)
+                {
+                    TimeSpan horaActual = DateTime.Now.TimeOfDay;
+                    TimeSpan horaCita = cita.citaHora;
+                    if (horaCita.TotalMinutes - horaActual.TotalMinutes < 120)
+                    {
+                        validarHorarioCita = true;
+                    }
+                }
+            }    
+            return validarHorarioCita;
+        }
     }
 }
             
