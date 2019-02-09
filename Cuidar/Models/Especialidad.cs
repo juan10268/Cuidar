@@ -7,7 +7,8 @@ namespace Cuidar.Models
 {
     public class Especialidad
     {
-        public int especialidadId { get; set; }
-        public string especialidadNombre { get; set; }
+        public int especialidad_Id { get; set; }
+        public string especialidad_Nombre { get; set; }
+       
     }   
 }

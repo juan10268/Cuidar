@@ -16,17 +16,16 @@ namespace Cuidar.Controllers
         [Route("api/Ciudades/getCiudades")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Ciudad> getDocumentos()
+        public IEnumerable<Ciudad> getCiudades()
         {
             return ciudadDB.getCiudades();
         }
-
-        [Route("api/Ciudades/getCiudadDepartamento")]
+        [Route ("api/Ciudades/getCiudadesPorDepartamento")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Ciudad> getCiudadesPorDepartamento(int idDepartamento)
+        public IEnumerable<Ciudad> getCiudadesPorDepartamento(int DepartamentoID)
         {
-            return ciudadDB.getCiudadesPorDepartamento(idDepartamento);
+            return ciudadDB.getCiudadesPorDepartamento(DepartamentoID);
         }
     }
 }

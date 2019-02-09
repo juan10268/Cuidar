@@ -7,10 +7,11 @@ namespace Cuidar.Models
 {
     public class Especialista
     {
-        public int especialistaID { get; set; }
-        public int especialistaEspecialidad { get; set; }
-        public string especialistaIngreso { get; set; }
-        public string especialistaRetiro { get; set; }
-        public int especialistaVinculacion { get; set; }
+        public int especialidadId { get; set; }
+        public int especialistaId { get; set; }
+        public String especialistaFechaIngreso { get; set; }
+        public String especialistaFechaRetiro { get; set; }
+        public int tipo_vinculacion { get; set; }
+        public string observaciones { get; set; }
     }
 }

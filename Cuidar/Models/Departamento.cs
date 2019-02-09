@@ -7,7 +7,7 @@ namespace Cuidar.Models
 {
     public class Departamento
     {
-        public int DepartamentoID { get; set; }
-        public string DepartamentoNombre { get; set; }
+        public int departamentoId { get; set; }
+        public string departamentoNombre { get; set; }
     }
 }

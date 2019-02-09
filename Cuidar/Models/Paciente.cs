@@ -7,11 +7,13 @@ namespace Cuidar.Models
 {
     public class Paciente
     {
-        public int pacienteID { get; set; }
-        public int rangoSalarialID { get; set; }
+        public string fechaingreso { get; set; }
+        public string fecharetiro { get; set; }
+        public int rangosalario { get; set; }
         public int vinculacionTipoId { get; set; }
-        public string pacienteFechaIngreso { get; set; }
-        public string pacienteFechaRetiro { get; set; }
-        public int activacionID { get; set; }
+        public int personasId { get; set; }
+        public int activacionId { get; set; }
+        public string observaciones { get; set; }
+        
     }
 }

@@ -3,8 +3,7 @@ using Cuidar.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace Cuidar.Controllers
@@ -13,12 +12,12 @@ namespace Cuidar.Controllers
     {
         DepartamentoDB departamentoDB = new DepartamentoDB();
 
-        [Route("api/Departamento/getDepartamento")]
+        [Route("api/Departamentos/getDepartamentos")]
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Departamento> getDepartamento()
+        public IEnumerable<Departamento> getDepartamentos()
         {
-            return departamentoDB.getDepartamento();
+            return departamentoDB.getDepartamentos();
         }
     }
 }

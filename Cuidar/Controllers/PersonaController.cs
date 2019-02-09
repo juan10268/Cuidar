@@ -2,10 +2,12 @@
 using Cuidar.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+
 
 namespace Cuidar.Controllers
 {
@@ -20,7 +22,6 @@ namespace Cuidar.Controllers
         {
             personaDB.AgregarPersona(persona);
         }
-
         [Route("api/Persona/getPersonas")]
         [HttpGet]
         [AllowAnonymous]
@@ -28,21 +29,19 @@ namespace Cuidar.Controllers
         {
             return personaDB.getPersonas();
         }
-
+        [Route("api/Persona/getPersonasid")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IEnumerable<Persona> getPersonasid (int personaID)
+        {
+            return personaDB.getPersonasid(personaID);
+        }
         [Route("api/Persona/Editar")]
         [HttpPost]
         [AllowAnonymous]
         public void EditarPersona(Persona persona)
         {
             personaDB.EditarPersona(persona);
-        }
-
-        [Route("api/Persona/getPacienteInfo")]
-        [HttpGet]
-        [AllowAnonymous]
-        public IEnumerable<object> getInfoPaciente(int idPaciente)
-        {
-            return personaDB.getPersonasPaciente(idPaciente);               
         }
     }
 }

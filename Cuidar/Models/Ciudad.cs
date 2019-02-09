@@ -7,8 +7,8 @@ namespace Cuidar.Models
 {
     public class Ciudad
     {
-        public int ciudadDepartamento { get; set; }
         public int ciudadId { get; set; }
         public string ciudadNombre { get; set; }
+        public int ciudadDepartamento { get; set; }
     }
 }
